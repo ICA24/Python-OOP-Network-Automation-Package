@@ -1,0 +1,22 @@
+[project]
+name = "scripts-for-nautobot"
+version = "1.0"
+
+dependencies = [
+    "ipaddress",
+    "datetime",
+    "requests",
+    "urllib3<1.27", # <1.27 required for pynautobot 2.01
+    "pynautobot",
+    "ipcalc",
+    "cryptography",
+    "datetime",
+    "python-dotenv",
+    "netmiko"
+]
+
+[tool.setuptools.packages.find]
+where = ["."]  # list of folders that contain the packages (["."] by default)
+include = ["config","device-interraction","utils"]  # package names should match these glob patterns (["*"] by default)
+exclude = ["logs","build","network_automation_package.egg-info"]  # exclude packages matching these glob patterns (empty by default)
+namespaces = false  # to disable scanning PEP 420 namespaces (true by default)
